@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "Achievements Dashboard",
+    "subtitle": "Dashboard / Agent User",
+    "role": "Agent Supervisor"
+  },
+  "dashboard": {
+    "title": "Achievements Dashboard",
+    "subtitle": "Quick summary by wallet type"
+  },
+  "sidebar": {
+    "subtitle": "Dashboard / Agent User",
+    "version": "v1.0",
+    "experimental": "Experimental Interface"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "customer": "Customer Lookup",
+    "cash": "Cash",
+    "zainCash": "Zain Cash",
+    "orangeMoney": "Orange Money",
+    "uWallet": "U Wallet",
+    "dinark": "Dinark",
+    "reports": "Reports",
+    "wallets": "Wallets",
+    "logout": "Logout"
+  },
+  "kpi": {
+    "cash": "Cash",
+    "dinark": "Dinark",
+    "uWallet": "U Wallet",
+    "orangeMoney": "Orange Money",
+    "zainCash": "Zain Cash",
+    "updatedAgo": "Last updated {minutes} min ago",
+    "updatedAgoOne": "Last updated 1 min ago",
+    "deltaPlus": "+{value}%",
+    "deltaMinus": "{value}%"
+  },
+  "walletDetails": {
+    "lastUpdated": "Last updated:",
+    "currentBalance": "Current Balance",
+    "todayTransactions": "Today's Transactions",
+    "avgTransaction": "Avg Transaction",
+    "selectWalletHint": "Select another wallet from above to quickly switch between details.",
+    "noSelection": "Select a wallet type from above to view details."
+  },
+  "charts": {
+    "title": "Transactions",
+    "subtitle": "Summary based on selected filters",
+    "tabByWallet": "Transactions by Wallet",
+    "tabWithdrawDeposit": "Withdraw vs Deposit",
+    "distribution": "Distribution across wallets",
+    "compare": "Withdraw compared to deposit",
+    "updated": "Updated",
+    "withdraw": "Withdraw",
+    "deposit": "Deposit",
+    "value": "Value"
+  },
+  "table": {
+    "title": "Latest Transactions",
+    "subtitle": "Recent executed operations",
+    "id": "ID",
+    "date": "Date",
+    "wallet": "Wallet",
+    "type": "Type",
+    "amount": "Amount",
+    "status": "Status"
+  },
+  "badges": {
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "completed": "Completed",
+    "pending": "Pending",
+    "failed": "Failed"
+  },
+  "filters": {
+    "week": "Week",
+    "last": "Last",
+    "branch": "Branch",
+    "all": "All"
+  },
+  "days": {
+    "sat": "Sat",
+    "sun": "Sun",
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri"
+  },
+  "language": {
+    "ar": "AR",
+    "en": "EN"
+  },
+  "pages": {
+    "cash": "Cash",
+    "customer": "Customer Lookup",
+    "dinark": "Dinark",
+    "orangeMoney": "Orange Money",
+    "uWallet": "U Wallet",
+    "zainCash": "Zain Cash",
+    "reports": "Reports",
+    "wallets": "Wallets"
+  },
+  "comingSoon": {
+    "title": "Coming soon",
+    "subtitle": "This page is under construction",
+    "back": "Back to dashboard"
+  }
+}

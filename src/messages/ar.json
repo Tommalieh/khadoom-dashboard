@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "لوحة الإنجازات",
+    "subtitle": "لوحة الإنجازات / مستخدم وكيل",
+    "role": "مشرف الوكيل"
+  },
+  "dashboard": {
+    "title": "لوحة الإنجازات",
+    "subtitle": "ملخص سريع حسب نوع المحفظة"
+  },
+  "sidebar": {
+    "subtitle": "لوحة الانجازات / مستخدم وكيل",
+    "version": "v1.0",
+    "experimental": "واجهة تجريبية"
+  },
+  "nav": {
+    "dashboard": "لوحة الانجازات",
+    "customer": "استعلام عن عميل",
+    "cash": "نقدي",
+    "zainCash": "زين كاش",
+    "orangeMoney": "اورنج موني",
+    "uWallet": "يو وليت",
+    "dinark": "دينارك",
+    "reports": "التقارير",
+    "wallets": "المحافظ",
+    "logout": "اغلاق الجلسة"
+  },
+  "kpi": {
+    "cash": "نقدي",
+    "dinark": "دينارك",
+    "uWallet": "يو وليت",
+    "orangeMoney": "اورنج موني",
+    "zainCash": "زين كاش",
+    "updatedAgo": "آخر تحديث: قبل {minutes} دقائق",
+    "updatedAgoOne": "آخر تحديث: قبل دقيقة",
+    "deltaPlus": "+{value}%",
+    "deltaMinus": "{value}%"
+  },
+  "walletDetails": {
+    "lastUpdated": "آخر تحديث:",
+    "currentBalance": "الرصيد الحالي",
+    "todayTransactions": "الحركات اليوم",
+    "avgTransaction": "متوسط العملية",
+    "selectWalletHint": "اختر محفظة أخرى من الأعلى للتنقل بين التفاصيل بسرعة.",
+    "noSelection": "اختر نوع المحفظة من الأعلى لعرض التفاصيل."
+  },
+  "charts": {
+    "title": "الحركات",
+    "subtitle": "عرض ملخص للحركات حسب الفلاتر المحددة",
+    "tabByWallet": "الحركات إلى نوع المحفظة",
+    "tabWithdrawDeposit": "حركات السحب إلى الإيداع",
+    "distribution": "توزيع الحركات على المحافظ",
+    "compare": "مقارنة السحب مقابل الإيداع",
+    "updated": "Updated",
+    "withdraw": "سحب",
+    "deposit": "إيداع",
+    "value": "القيمة"
+  },
+  "table": {
+    "title": "آخر الحركات",
+    "subtitle": "عرض أحدث العمليات المنفذة",
+    "id": "المعرف",
+    "date": "التاريخ",
+    "wallet": "المحفظة",
+    "type": "النوع",
+    "amount": "المبلغ",
+    "status": "الحالة"
+  },
+  "badges": {
+    "deposit": "إيداع",
+    "withdraw": "سحب",
+    "completed": "مكتملة",
+    "pending": "قيد المعالجة",
+    "failed": "فشلت"
+  },
+  "filters": {
+    "week": "أسبوع",
+    "last": "آخر",
+    "branch": "فرع",
+    "all": "الكل"
+  },
+  "days": {
+    "sat": "سبت",
+    "sun": "أحد",
+    "mon": "إثنين",
+    "tue": "ثلاثاء",
+    "wed": "أربعاء",
+    "thu": "خميس",
+    "fri": "جمعة"
+  },
+  "language": {
+    "ar": "عربي",
+    "en": "EN"
+  },
+  "pages": {
+    "cash": "نقدي",
+    "customer": "استعلام عن عميل",
+    "dinark": "دينارك",
+    "orangeMoney": "اورنج موني",
+    "uWallet": "يو وليت",
+    "zainCash": "زين كاش",
+    "reports": "التقارير",
+    "wallets": "المحافظ"
+  },
+  "comingSoon": {
+    "title": "قريباً",
+    "subtitle": "هذه الصفحة قيد التطوير",
+    "back": "العودة إلى لوحة التحكم"
+  }
+}
