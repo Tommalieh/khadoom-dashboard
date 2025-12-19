@@ -56,13 +56,13 @@ export function ChartsCardSkeleton() {
           <Skeleton className='h-5 w-28' />
           <Skeleton className='mt-2 h-4 w-56' />
         </div>
-        <div className='flex gap-3'>
-          <Skeleton className='h-11 w-40 rounded-2xl' />
-          <Skeleton className='h-11 w-40 rounded-2xl' />
+        <div className='flex gap-2 sm:gap-3'>
+          <Skeleton className='h-10 w-24 rounded-2xl sm:h-11 sm:w-40' />
+          <Skeleton className='h-10 w-24 rounded-2xl sm:h-11 sm:w-40' />
         </div>
       </div>
 
-      <Skeleton className='mt-5 h-11 w-[420px] rounded-2xl' />
+      <Skeleton className='mt-5 h-10 w-full max-w-[420px] rounded-2xl sm:h-11' />
       <div className='mt-4 rounded-2xl border bg-background p-4'>
         <div className='flex items-center justify-between'>
           <Skeleton className='h-4 w-44' />

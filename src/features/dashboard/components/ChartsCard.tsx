@@ -20,17 +20,17 @@ export default function ChartsCard() {
   ];
 
   return (
-    <Card className='rounded-2xl border bg-white p-5'>
-      <div className='flex flex-wrap items-start justify-between gap-4'>
+    <Card className='rounded-2xl border bg-white p-4 sm:p-5'>
+      <div className='flex flex-wrap items-start justify-between gap-3 sm:gap-4'>
         <div>
-          <h3 className='text-lg font-semibold'>{t('title')}</h3>
-          <p className='mt-1 text-sm text-muted-foreground'>{t('subtitle')}</p>
+          <h3 className='text-base font-semibold sm:text-lg'>{t('title')}</h3>
+          <p className='mt-1 text-xs text-muted-foreground sm:text-sm'>{t('subtitle')}</p>
         </div>
 
         <ChartsFilters />
       </div>
 
-      <div className='mt-5'>
+      <div className='mt-4 sm:mt-5'>
         {/* Animated Pill Tabs */}
         <div className='relative flex items-center rounded-2xl bg-muted p-1'>
           {tabs.map((tabItem) => {
@@ -41,7 +41,7 @@ export default function ChartsCard() {
                 type='button'
                 onClick={() => setTab(tabItem.value)}
                 className={cn(
-                  'relative z-10 h-12 flex-1 rounded-xl px-4 text-sm font-medium transition-colors',
+                  'relative z-10 h-10 flex-1 rounded-xl px-2 text-xs font-medium transition-colors sm:h-12 sm:px-4 sm:text-sm',
                   isActive ? 'text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
                 )}
               >
@@ -59,7 +59,7 @@ export default function ChartsCard() {
         </div>
 
         {/* Tab Content */}
-        <div className='mt-4'>
+        <div className='mt-3 sm:mt-4'>
           <AnimatePresence mode='wait'>
             <motion.div
               key={tab}
@@ -67,7 +67,7 @@ export default function ChartsCard() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className='rounded-2xl border bg-background p-4'
+              className='rounded-2xl border bg-background p-3 sm:p-4'
             >
               {tab === 'byWallet' ? <ByWalletChart /> : <WithdrawVsDepositChart />}
             </motion.div>

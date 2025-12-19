@@ -46,17 +46,21 @@ export function StatCard({
           <span className='absolute -inset-x-20 -top-10 h-24 rotate-6 bg-gradient-to-r from-transparent via-secondary/25 to-transparent' />
         </span>
 
-        <div className='flex items-start gap-3'>
-          <div className='grid h-10 w-10 place-items-center rounded-2xl bg-secondary/25 text-primary'>{icon}</div>
+        <div className='flex items-start gap-2 sm:gap-3'>
+          <div className='grid h-9 w-9 shrink-0 place-items-center rounded-2xl bg-secondary/25 text-primary sm:h-10 sm:w-10'>
+            {icon}
+          </div>
 
           <div className='min-w-0 flex-1'>
-            <div className='text-sm text-muted-foreground truncate'>{title}</div>
+            <div className='truncate text-xs text-muted-foreground sm:text-sm'>{title}</div>
 
-            <div className='mt-2 flex items-center gap-2'>
-              <div className='font-en-body text-2xl leading-none text-foreground'>{formatMoney(display)}</div>
+            <div className='mt-1.5 flex items-center gap-1.5 sm:mt-2 sm:gap-2'>
+              <div className='font-en-body text-xl leading-none text-foreground sm:text-2xl'>
+                {formatMoney(display)}
+              </div>
               <div
                 className={cn(
-                  'text-xs rounded-full px-2 py-1',
+                  'shrink-0 rounded-full px-1.5 py-0.5 text-[0.65rem] sm:px-2 sm:py-1 sm:text-xs',
                   deltaPositive ? 'bg-secondary/25 text-primary' : 'bg-accent/20 text-foreground'
                 )}
               >
@@ -67,7 +71,7 @@ export function StatCard({
               </div>
             </div>
 
-            <div className='mt-2 text-[0.65rem] text-muted-foreground'>
+            <div className='mt-1.5 text-[0.6rem] text-muted-foreground sm:mt-2 sm:text-[0.65rem]'>
               {updatedMinutes === 1 ? t('updatedAgoOne') : t('updatedAgo', { minutes: updatedMinutes })}
             </div>
           </div>

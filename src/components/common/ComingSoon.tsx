@@ -51,15 +51,22 @@ export default function ComingSoon({
   const t = useTranslations();
 
   return (
-    <div className='min-h-[calc(100dvh-4rem)] flex items-center justify-center px-6 py-10 bg-background'>
+    <div className='flex min-h-[calc(100dvh-3.5rem)] items-center justify-center bg-background px-4 py-8 sm:min-h-[calc(100dvh-4rem)] sm:px-6 sm:py-10'>
       <div className='w-full max-w-xl text-center'>
         <motion.div
           variants={floatAnim}
           initial='initial'
           animate='animate'
-          className='relative z-10 h-full w-full grid place-items-center'
+          className='relative z-10 grid h-full w-full place-items-center'
         >
-          <Image src={logoSrc} alt={logoAlt} width={1158} height={511} priority className=' w-auto' />
+          <Image
+            src={logoSrc}
+            alt={logoAlt}
+            width={1158}
+            height={511}
+            priority
+            className='w-auto max-w-[280px] sm:max-w-none'
+          />
         </motion.div>
 
         {/* Text */}
@@ -67,7 +74,7 @@ export default function ComingSoon({
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className='text-3xl font-semibold tracking-tight'
+          className='text-2xl font-semibold tracking-tight sm:text-3xl'
         >
           {t('comingSoon.title')}
         </motion.h1>
@@ -76,7 +83,7 @@ export default function ComingSoon({
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-          className='mt-2 text-sm text-muted-foreground'
+          className='mt-2 text-xs text-muted-foreground sm:text-sm'
         >
           {t('comingSoon.subtitle')}
         </motion.p>
@@ -86,7 +93,7 @@ export default function ComingSoon({
           variants={dotsContainer}
           initial='initial'
           animate='animate'
-          className='mt-8 flex items-center justify-center gap-2'
+          className='mt-6 flex items-center justify-center gap-2 sm:mt-8'
           aria-label='Loading'
           role='status'
         >
@@ -96,7 +103,7 @@ export default function ComingSoon({
         </motion.div>
 
         {/* Back button */}
-        <div className='mt-8 flex justify-center'>
+        <div className='mt-6 flex justify-center sm:mt-8'>
           <Button asChild className='rounded-xl'>
             <Link href={backHref}>{t('comingSoon.back')}</Link>
           </Button>

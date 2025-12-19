@@ -23,7 +23,7 @@ function PillTabs<T extends string>({ options, value, onChange, layoutId }: Pill
             type='button'
             onClick={() => onChange(option.value)}
             className={cn(
-              'relative z-10 h-8 rounded-xl px-4 text-sm font-medium transition-colors',
+              'relative z-10 h-8 rounded-xl px-3 text-xs font-medium transition-colors sm:px-4 sm:text-sm',
               isActive ? 'text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
             )}
           >
@@ -60,7 +60,7 @@ export default function ChartsFilters() {
   ];
 
   return (
-    <div className='flex flex-wrap items-center gap-3'>
+    <div className='flex flex-wrap items-center gap-2 sm:gap-3'>
       <PillTabs options={rangeOptions} value={range} onChange={setRange} layoutId='chart-range-pill' />
       <PillTabs options={scopeOptions} value={scope} onChange={setScope} layoutId='chart-scope-pill' />
     </div>
