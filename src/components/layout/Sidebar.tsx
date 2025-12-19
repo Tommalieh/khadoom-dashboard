@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { dashboardHome, dashboardLogout, dashboardNav } from '@/lib/navigation';
@@ -149,6 +149,11 @@ export default function Sidebar() {
   const mobileSidebarOpen = useUiStore((s) => s.mobileSidebarOpen);
   const setMobileSidebarOpen = useUiStore((s) => s.setMobileSidebarOpen);
   const sidebarCollapsed = useUiStore((s) => s.sidebarCollapsed);
+  const locale = useLocale();
+  const isRtl = locale === 'ar';
+
+  // For RTL, sidebar slides in from the right (100%), for LTR from the left (-100%)
+  const drawerInitialX = isRtl ? '100%' : '-100%';
 
   return (
     <>
@@ -178,11 +183,11 @@ export default function Sidebar() {
 
             {/* Drawer */}
             <motion.aside
-              initial={{ x: '-100%' }}
+              initial={{ x: drawerInitialX }}
               animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
+              exit={{ x: drawerInitialX }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className='fixed inset-y-0 start-0 z-50 w-72 overflow-y-auto bg-primary text-primary-foreground lg:hidden'
+              className='fixed inset-y-0 start-0 z-50 w-72 overflow-y-auto bg-sidebar text-sidebar-foreground border-e border-sidebar-border lg:hidden'
             >
               {/* Close button */}
               <button
