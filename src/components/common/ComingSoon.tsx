@@ -39,15 +39,7 @@ const dot = {
   },
 };
 
-export default function ComingSoon({
-  backHref = '/dashboard',
-  logoSrc = '/logo-light-cropped.png',
-  logoAlt = 'Logo',
-}: {
-  backHref?: string;
-  logoSrc?: string;
-  logoAlt?: string;
-}) {
+export default function ComingSoon({ backHref = '/dashboard' }: { backHref?: string }) {
   const t = useTranslations();
 
   return (
@@ -59,13 +51,23 @@ export default function ComingSoon({
           animate='animate'
           className='relative z-10 grid h-full w-full place-items-center'
         >
+          {/* Light theme logo */}
           <Image
-            src={logoSrc}
-            alt={logoAlt}
+            src='/logo-light-cropped.png'
+            alt='Logo'
             width={1158}
             height={511}
             priority
-            className='w-auto max-w-[280px] sm:max-w-none'
+            className='block w-auto max-w-70 dark:hidden sm:max-w-none'
+          />
+          {/* Dark theme logo */}
+          <Image
+            src='/logo-dark-cropped.png'
+            alt='Logo'
+            width={1158}
+            height={511}
+            priority
+            className='hidden w-auto max-w-70 dark:block sm:max-w-none'
           />
         </motion.div>
 
