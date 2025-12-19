@@ -106,5 +106,11 @@
     "title": "Coming soon",
     "subtitle": "This page is under construction",
     "back": "Back to dashboard"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "subtitle": "Sorry, we couldn't find the page you're looking for",
+    "code": "404",
+    "back": "Back to dashboard"
   }
 }
