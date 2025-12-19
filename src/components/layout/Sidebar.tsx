@@ -23,6 +23,7 @@ function NavRow({
   active,
   disabled,
   onClick,
+  collapsed,
 }: {
   href: string;
   label: string;
@@ -30,6 +31,7 @@ function NavRow({
   active: boolean;
   disabled?: boolean;
   onClick?: () => void;
+  collapsed?: boolean;
 }) {
   const content = (
     <motion.div
@@ -37,7 +39,8 @@ function NavRow({
       className={cn(
         'relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm',
         'transition-colors',
-        disabled ? 'cursor-not-allowed text-white/40' : 'text-white/85 hover:bg-white/10 hover:text-white'
+        disabled ? 'cursor-not-allowed text-white/40' : 'text-white/85 hover:bg-white/10 hover:text-white',
+        collapsed && 'justify-center px-0'
       )}
     >
       {/* Active indicator (RTL: right side) */}
@@ -48,11 +51,13 @@ function NavRow({
         />
       ) : null}
 
-      <span className={cn('grid h-9 w-9 place-items-center rounded-xl', disabled ? 'bg-white/5' : 'bg-white/10')}>
+      <span
+        className={cn('grid h-9 w-9 shrink-0 place-items-center rounded-xl', disabled ? 'bg-white/5' : 'bg-white/10')}
+      >
         <Icon className='h-4.5 w-4.5' />
       </span>
 
-      <span className='truncate'>{label}</span>
+      {!collapsed && <span className='truncate'>{label}</span>}
     </motion.div>
   );
 
@@ -67,22 +72,30 @@ function NavRow({
   );
 }
 
-function SidebarContent({ onNavClick }: { onNavClick?: () => void }) {
+function SidebarContent({ onNavClick, collapsed }: { onNavClick?: () => void; collapsed?: boolean }) {
   const pathname = usePathname();
   const t = useTranslations();
 
   return (
     <>
       {/* Brand */}
-      <div className='px-4 pt-5'>
-        <div className='rounded-2xl bg-white/10 px-4 py-3'>
-          <Image src='/logo-dark-cropped.png' alt='Khadoom' width={60} height={16} className='h-auto w-auto' />
-          <div className='mt-2 text-xs text-white/70'>{t('sidebar.subtitle')}</div>
+      <div className={cn('px-4 pt-5', collapsed && 'px-2')}>
+        <div className={cn('rounded-2xl bg-white/10 px-4 py-3', collapsed && 'px-2 py-2')}>
+          {collapsed ? (
+            <div className='grid place-items-center'>
+              <Image src='/logo-dark-cropped.png' alt='Khadoom' width={32} height={32} className='h-5 w-auto' />
+            </div>
+          ) : (
+            <>
+              <Image src='/logo-dark-cropped.png' alt='Khadoom' width={60} height={16} className='h-auto w-auto' />
+              <div className='mt-2 text-xs text-white/70'>{t('sidebar.subtitle')}</div>
+            </>
+          )}
         </div>
       </div>
 
       {/* Nav */}
-      <nav className='px-3 py-3'>
+      <nav className={cn('px-3 py-3', collapsed && 'px-2')}>
         <motion.div variants={stagger} initial='hidden' animate='show' className='space-y-1'>
           <NavRow
             href={dashboardHome.href}
@@ -90,6 +103,7 @@ function SidebarContent({ onNavClick }: { onNavClick?: () => void }) {
             icon={dashboardHome.icon}
             active={isActive(pathname, dashboardHome.href)}
             onClick={onNavClick}
+            collapsed={collapsed}
           />
 
           <div className='my-3 h-px bg-white/10' />
@@ -102,6 +116,7 @@ function SidebarContent({ onNavClick }: { onNavClick?: () => void }) {
               icon={item.icon}
               active={isActive(pathname, item.href)}
               onClick={onNavClick}
+              collapsed={collapsed}
             />
           ))}
 
@@ -113,16 +128,19 @@ function SidebarContent({ onNavClick }: { onNavClick?: () => void }) {
             icon={dashboardLogout.icon}
             active={false}
             disabled
+            collapsed={collapsed}
           />
         </motion.div>
       </nav>
 
       {/* Footer hint */}
-      <div className='mt-auto px-4 pb-5'>
-        <div className='rounded-2xl bg-white/5 px-4 py-3 text-xs text-white/70'>
-          <span className='font-en-body'>{t('sidebar.version')}</span> • {t('sidebar.experimental')}
+      {!collapsed && (
+        <div className='mt-auto px-4 pb-5'>
+          <div className='rounded-2xl bg-white/5 px-4 py-3 text-xs text-white/70'>
+            <span className='font-en-body'>{t('sidebar.version')}</span> • {t('sidebar.experimental')}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
@@ -130,13 +148,19 @@ function SidebarContent({ onNavClick }: { onNavClick?: () => void }) {
 export default function Sidebar() {
   const mobileSidebarOpen = useUiStore((s) => s.mobileSidebarOpen);
   const setMobileSidebarOpen = useUiStore((s) => s.setMobileSidebarOpen);
+  const sidebarCollapsed = useUiStore((s) => s.sidebarCollapsed);
 
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className='sticky top-0 hidden h-dvh w-72 shrink-0 overflow-y-auto bg-primary text-primary-foreground lg:block'>
-        <SidebarContent />
-      </aside>
+      <motion.aside
+        initial={false}
+        animate={{ width: sidebarCollapsed ? 72 : 288 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+        className='sticky top-0 hidden h-dvh shrink-0 overflow-y-auto overflow-x-hidden bg-primary text-primary-foreground lg:block'
+      >
+        <SidebarContent collapsed={sidebarCollapsed} />
+      </motion.aside>
 
       {/* Mobile Sidebar Overlay */}
       <AnimatePresence>
