@@ -20,7 +20,7 @@ export default function ChartsCard() {
   ];
 
   return (
-    <Card className='rounded-2xl border bg-white p-4 sm:p-5'>
+    <Card className='rounded-2xl border bg-card p-4 sm:p-5'>
       <div className='flex flex-wrap items-start justify-between gap-3 sm:gap-4'>
         <div>
           <h3 className='text-base font-semibold sm:text-lg'>{t('title')}</h3>

@@ -92,6 +92,12 @@
     "ar": "AR",
     "en": "EN"
   },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggle": "Toggle theme"
+  },
   "pages": {
     "cash": "Cash",
     "customer": "Customer Lookup",

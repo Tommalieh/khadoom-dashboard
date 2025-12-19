@@ -22,7 +22,7 @@ export default function TransactionsTable() {
   });
 
   return (
-    <Card className='rounded-2xl border bg-white p-4 sm:p-5'>
+    <Card className='rounded-2xl border bg-card p-4 sm:p-5'>
       <div className='border-b px-3 py-3 sm:px-5 sm:py-4'>
         <h3 className='text-base font-semibold sm:text-lg'>{t('title')}</h3>
         <p className='text-xs text-muted-foreground sm:text-sm'>{t('subtitle')}</p>

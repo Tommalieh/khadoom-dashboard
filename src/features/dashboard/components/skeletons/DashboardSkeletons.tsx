@@ -4,7 +4,7 @@ export function KpiStripSkeleton() {
   return (
     <section className='grid gap-4 sm:grid-cols-2 lg:grid-cols-5'>
       {Array.from({ length: 5 }).map((_, i) => (
-        <div key={i} className='rounded-2xl border bg-white p-4'>
+        <div key={i} className='rounded-2xl border bg-card p-4'>
           <div className='flex items-start gap-3'>
             <Skeleton className='h-10 w-10 rounded-2xl' />
             <div className='flex-1'>
@@ -24,7 +24,7 @@ export function KpiStripSkeleton() {
 
 export function WalletDetailsSkeleton() {
   return (
-    <div className='rounded-2xl border bg-white p-5'>
+    <div className='rounded-2xl border bg-card p-5'>
       <div className='flex items-start gap-4'>
         <Skeleton className='h-11 w-11 rounded-2xl' />
         <div className='flex-1'>
@@ -50,7 +50,7 @@ export function WalletDetailsSkeleton() {
 
 export function ChartsCardSkeleton() {
   return (
-    <div className='rounded-2xl border bg-white p-5'>
+    <div className='rounded-2xl border bg-card p-5'>
       <div className='flex flex-wrap items-start justify-between gap-4'>
         <div>
           <Skeleton className='h-5 w-28' />
@@ -76,7 +76,7 @@ export function ChartsCardSkeleton() {
 
 export function TransactionsTableSkeleton() {
   return (
-    <div className='rounded-2xl border bg-white'>
+    <div className='rounded-2xl border bg-card'>
       <div className='border-b px-5 py-4'>
         <Skeleton className='h-5 w-28' />
         <Skeleton className='mt-2 h-4 w-48' />

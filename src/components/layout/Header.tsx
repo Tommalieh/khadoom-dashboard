@@ -3,6 +3,7 @@
 import { Menu, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '@/components/layout/LanguageSwitcher';
+import ThemeSwitcher from '@/components/layout/ThemeSwitcher';
 import { useUiStore } from '@/store/ui.store';
 
 export default function Header() {
@@ -12,7 +13,7 @@ export default function Header() {
   const toggleSidebar = useUiStore((s) => s.toggleSidebar);
 
   return (
-    <header className='h-14 border-b border-border bg-white/80 backdrop-blur sm:h-16'>
+    <header className='h-14 border-b border-border bg-card/80 backdrop-blur sm:h-16'>
       <div className='flex h-full items-center px-4 sm:px-6'>
         {/* Hamburger menu for mobile */}
         <button
@@ -41,10 +42,11 @@ export default function Header() {
           <div className='truncate text-xs text-muted-foreground'>{t('header.subtitle')}</div>
         </div>
 
-        <div className='ms-auto flex shrink-0 items-center gap-2'>
+        <div className='ms-auto flex shrink-0 items-center gap-1 sm:gap-2'>
           <span className='hidden rounded-full bg-secondary/25 px-3 py-1 text-xs text-foreground sm:inline'>
             {t('header.role')}
           </span>
+          <ThemeSwitcher />
           <LanguageSwitcher />
         </div>
       </div>

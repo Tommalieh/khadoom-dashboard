@@ -40,7 +40,7 @@ export default function WalletDetails() {
           exit={{ opacity: 0, y: 8 }}
           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
         >
-          <Card className='rounded-2xl border bg-white p-4 sm:p-5'>
+          <Card className='rounded-2xl border bg-card p-4 sm:p-5'>
             <div className='flex items-start gap-3 sm:gap-4'>
               <div className='grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary sm:h-11 sm:w-11'>
                 {iconFor(wallet.key)}
@@ -91,7 +91,7 @@ export default function WalletDetails() {
         </motion.div>
       ) : (
         <motion.div key='empty' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-          <Card className='rounded-2xl border bg-white p-4 sm:p-5'>
+          <Card className='rounded-2xl border bg-card p-4 sm:p-5'>
             <div className='text-xs text-muted-foreground sm:text-sm'>{t('noSelection')}</div>
           </Card>
         </motion.div>

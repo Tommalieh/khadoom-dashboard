@@ -36,7 +36,7 @@ export function StatCard({
         tabIndex={0}
         onClick={onClick}
         className={cn(
-          'relative overflow-hidden rounded-2xl border bg-white p-4 shadow-sm transition',
+          'relative overflow-hidden rounded-2xl border bg-card p-4 shadow-sm transition',
           'hover:shadow-md cursor-pointer',
           active && 'ring-2 ring-primary/30'
         )}

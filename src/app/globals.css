@@ -107,37 +107,57 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Base surfaces */
+  --background: 222 22% 9%; /* deep ink */
+  --foreground: 210 20% 96%; /* near-white text */
+
+  --card: 222 20% 13%; /* elevated surface */
+  --card-foreground: 210 20% 96%;
+
+  --popover: 222 20% 13%;
+  --popover-foreground: 210 20% 96%;
+
+  /* Muted + borders */
+  --muted: 222 16% 16%;
+  --muted-foreground: 215 12% 70%;
+
+  --border: 222 14% 22%;
+  --input: 222 14% 22%;
+
+  /* Brand */
+  --primary: 204 70% 62%; /* bright brand blue for focus/active */
+  --primary-foreground: 222 22% 10%;
+
+  --secondary: 205 35% 24%; /* subdued blue-gray */
+  --secondary-foreground: 210 20% 96%;
+
+  --accent: 32 90% 58%; /* brand orange */
+  --accent-foreground: 222 22% 10%;
+
+  --destructive: 0 70% 52%;
+  --destructive-foreground: 0 0% 98%;
+
+  /* Charts */
+  --chart-1: 204 70% 62%;
+  --chart-2: 204 55% 48%;
+  --chart-3: 32 90% 58%;
+  --chart-4: 204 45% 38%;
+  --chart-5: 215 12% 75%;
+
+  /* Sidebar – darker, neutral, premium */
+  --sidebar: 222 22% 10%; /* darker than content background */
+  --sidebar-foreground: 210 20% 92%;
+
+  --sidebar-accent: 222 16% 16%; /* hover background */
+  --sidebar-accent-foreground: 210 20% 96%;
+
+  --sidebar-primary: 204 70% 62%; /* brand blue ONLY for active */
+  --sidebar-primary-foreground: 222 22% 10%;
+
+  --sidebar-border: 222 14% 18%;
+  --sidebar-ring: 204 70% 62%;
+
+  --ring: 204 70% 62%;
 }
 
 @layer base {

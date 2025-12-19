@@ -157,7 +157,7 @@ export default function Sidebar() {
         initial={false}
         animate={{ width: sidebarCollapsed ? 72 : 288 }}
         transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-        className='sticky top-0 hidden h-dvh shrink-0 overflow-y-auto overflow-x-hidden bg-primary text-primary-foreground lg:block'
+        className='sticky top-0 hidden h-dvh shrink-0 overflow-y-auto overflow-x-hidden bg-sidebar text-sidebar-foreground border-e border-sidebar-border lg:block'
       >
         <SidebarContent collapsed={sidebarCollapsed} />
       </motion.aside>
