@@ -61,7 +61,7 @@ export default function TransactionsTable() {
           </table>
         </div>
         {/* Scroll indicator for mobile */}
-        <div className='pointer-events-none absolute inset-y-0 end-0 w-6 bg-gradient-to-l from-white sm:hidden' />
+        <div className='pointer-events-none absolute inset-y-0 end-0 w-6 bg-gradient-to-l from-card sm:hidden rtl:rotate-180' />
       </div>
     </Card>
   );
